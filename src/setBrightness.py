@@ -20,7 +20,7 @@ iface = dbus.\
 parser = argparse.ArgumentParser(description='Sets the Monitor Brightness')
 
 # Set int argument:
-parser.add_argument("level", nargs="?", type=int, help='Integer from 1 to 100')
+parser.add_argument("level", nargs="?", type=int, help='Integer from 0 to 100')
 # nargs="?" wont make error if missing argument
 
 args = parser.parse_args()
@@ -50,4 +50,4 @@ print "Setting brightness to: ", level
 try:
     iface.SetPercentage(level)
 except:
-    print "Wrong brightness input: \nplease enter int from 1 to 100"
+    print "Wrong brightness input: \nplease enter int from 0 to 100"
